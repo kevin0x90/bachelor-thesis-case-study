@@ -7,7 +7,7 @@ import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.web.context.support.GenericWebApplicationContext;
 
 @SpringBootApplication
-final public class AutomatedRefactoringCaseStudyProjectApplication {
+public class AutomatedRefactoringCaseStudyProjectApplication {
 
 	public static void main(final String[] args) {
 		final ConfigurableApplicationContext context = SpringApplication.run(AutomatedRefactoringCaseStudyProjectApplication.class, args);

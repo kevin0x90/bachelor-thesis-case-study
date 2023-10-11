@@ -24,6 +24,22 @@ final public class Customer {
         this.age = age;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
     @Override
     public int hashCode() {
         return Integer.hashCode(id);
