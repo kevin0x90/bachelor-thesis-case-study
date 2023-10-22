@@ -21,4 +21,6 @@ Statische Code-Analyse Optionals
 
 `mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-static-analysis:RELEASE -Drewrite.activeRecipes=org.openrewrite.staticanalysis.FinalizeLocalVariables,org.openrewrite.staticanalysis.FinalizeMethodArguments`
 
-Szenario Dependency-Update mit API Change
+Szenario Dependency-Update
+
+`mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-java-dependencies:1.0.10 -Drewrite.activeRecipes=com.refactoring.automatedrefactoringcasestudyproject`

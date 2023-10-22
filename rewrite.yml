@@ -1,0 +1,8 @@
+type: specs.openrewrite.org/v1beta/recipe
+name: com.refactoring.automatedrefactoringcasestudyproject
+displayName: Upgrade apache commons io dependency
+recipeList:
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
+      groupId: commons-io
+      artifactId: commons-io
+      newVersion: 2.6
