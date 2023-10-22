@@ -9,10 +9,10 @@ import org.springframework.web.context.support.GenericWebApplicationContext;
 @SpringBootApplication
 public class AutomatedRefactoringCaseStudyProjectApplication {
 
-	public static void main(final String[] args) {
-		final ConfigurableApplicationContext context = SpringApplication.run(AutomatedRefactoringCaseStudyProjectApplication.class, args);
+	public static void main(String[] args) {
+		ConfigurableApplicationContext context = SpringApplication.run(AutomatedRefactoringCaseStudyProjectApplication.class, args);
 
-		final var beanFactory = context.getBeanFactory();
+		var beanFactory = context.getBeanFactory();
 
 		beanFactory.registerSingleton(CustomerRepository.class.getCanonicalName(), new CustomerRepository());
 	}

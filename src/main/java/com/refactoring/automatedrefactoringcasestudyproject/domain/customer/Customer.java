@@ -13,10 +13,10 @@ final public class Customer {
     private final int age;
 
     public Customer(
-            final int id,
-            final @Nonnull String firstName,
-            final @Nonnull String lastName,
-            final int age
+            int id,
+            @Nonnull String firstName,
+            @Nonnull String lastName,
+            int age
     ) {
         this.id = id;
         this.firstName = firstName;

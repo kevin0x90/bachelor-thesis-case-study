@@ -2,6 +2,7 @@ package com.refactoring.automatedrefactoringcasestudyproject.infrastructure.http
 
 import com.refactoring.automatedrefactoringcasestudyproject.domain.customer.CustomerRepository;
 import com.refactoring.automatedrefactoringcasestudyproject.infrastructure.http.api.example.response.CustomerResponseDto;
+import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,22 +22,22 @@ final public class ExampleController {
 
     @GetMapping("/customers/{customerId}")
     public ResponseEntity<CustomerResponseDto> getCustomer(
-            @PathVariable("customerId") final int customerId
+            @PathVariable("customerId") int customerId
     ) {
         var foundCustomer = customerRepository.findById(customerId);
 
-        if (foundCustomer.isPresent()) {
-            var customer = foundCustomer.get();
-            return ResponseEntity.ok(CustomerResponseDto.builder()
-                    .id(customer.getId())
-                    .age(customer.getAge())
-                    .firstName(customer.getFirstName())
-                    .lastName(customer.getLastName())
-                    .build()
-            );
+        if (!foundCustomer.isPresent()) {
+            return ResponseEntity.notFound().build();
         }
 
-        return ResponseEntity.notFound().build();
+        var customer = foundCustomer.get();
+        return ResponseEntity.ok(CustomerResponseDto.builder()
+                .id(customer.getId())
+                .age(customer.getAge())
+                .firstName(customer.getFirstName())
+                .lastName(customer.getLastName())
+                .build()
+        );
     }
 
     @GetMapping("/customers")
@@ -55,5 +56,4 @@ final public class ExampleController {
 
         return ResponseEntity.ok(resultList);
     }
-
 }

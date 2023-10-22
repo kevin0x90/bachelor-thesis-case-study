@@ -9,8 +9,8 @@ import java.util.Set;
 final public class CustomerRepository {
 
     private static final String NUMBER_OF_CUSTOMERS_QUERY = "SELECT" +
-            "COUNT(*)" +
-            "FROM customer";
+            " COUNT(*)" +
+            " FROM customer";
 
     public Optional<Customer> findCustomerByLastName(String lastName) {
         return Optional.of(
